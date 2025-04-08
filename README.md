@@ -20,7 +20,7 @@ A powerful tool for managing and switching Git branches efficiently in multi-mod
 ### Installation
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/jeck5001/switchBranch.git
 ```
 
 2. Build the project:
@@ -64,7 +64,7 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ### 安装说明
 1. 克隆仓库：
 ```bash
-git clone [仓库地址]
+git clone https://github.com/jeck5001/switchBranch.git
 ```
 
 2. 构建项目：
