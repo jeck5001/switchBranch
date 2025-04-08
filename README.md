@@ -42,7 +42,7 @@ Batch Branch Switching:
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ### License
-[License information will be added here]
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -86,4 +86,4 @@ git clone [仓库地址]
 欢迎提交 Pull Request 来帮助改进项目！
 
 ### 许可证
-[许可证信息将在这里添加] 
+本项目采用 Apache License 2.0 许可证 - 详情请参阅 [LICENSE](LICENSE) 文件。 
