@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+  <id>com.wjf.switchbranch</id>
+
+  <!-- Public plugin name should be written in Title Case.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+  <name>Switch Branch</name>
+
+  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+  <vendor>wjf</vendor>
+
+  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+       Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+  <description><![CDATA[
+    Switch Git branches of multiple modules with one click, supporting simultaneous branch switching for all modules in a project, greatly improving development efficiency. Whether for team collaboration or individual projects, it quickly unifies branch states, simplifies workflows, reduces manual switching efforts, and suits complex project management.<br>
+    一键切换多个模块的Git分支，支持同时切换项目中所有模块的分支，极大提升开发效率。无论是多人协作还是个人项目，都能快速统一分支状态，简化工作流程，减少手动切换的繁琐操作，适合复杂项目管理。
+  ]]></description>
+
+  <!-- Product and plugin compatibility requirements.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>Git4Idea</depends>
+
+  <!-- Extension points defined by the plugin.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.intellij">
+
+  </extensions>
+
+  <actions>
+    <action id="SwitchBranch" 
+            class="com.wjf.switchbranch.SwitchBranchAction"
+            text="切换所有模块分支"
+            description="同时切换所有模块的Git分支">
+      <!-- 添加到主菜单栏的 VCS 菜单 -->
+      <add-to-group group-id="VcsMenu" relative-to-action="Vcs.Import" anchor="after"/>
+      <!-- 添加到 Git 工具窗口 -->
+      <add-to-group group-id="Git.QuickListPopupAction" relative-to-action="Git.QuickListPopupAction" anchor="first"/>
+      <!-- 添加到 Git 菜单 -->
+      <add-to-group group-id="GitMenu" relative-to-action="Git.Branches" anchor="after"/>
+      <!-- 添加到主菜单 -->
+      <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
+      <!-- 添加到右键菜单 -->
+      <add-to-group group-id="ProjectViewPopupMenu" relative-to-action="Git.Branches" anchor="after"/>
+      <!-- 添加到工具菜单 -->
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <!-- 修改快捷键，为Windows/Linux和Mac分别设置 -->
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt B"/>
+      <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta alt B"/>
+      <keyboard-shortcut keymap="Mac OS X 10.5+" first-keystroke="meta alt B"/>
+    </action>
+  </actions>
+</idea-plugin>
